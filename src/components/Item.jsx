@@ -33,7 +33,7 @@ function Item() {
         <p className='font-bold'>Price: ₹{item.price}</p>
         <p className='font-light'>Description: {item.description}</p>
         <button className='bg-blue-950 text-white p-3 rounded-2xl mt-5' onClick={() => dispatch(additem(item))}>Add to Cart</button>
-        <button className='bg-blue-950 text-white p-3 rounded-2xl mt-5 ml-10 min-w-25 ' onClick={goHome}>Back</button>
+        <button className='bg-blue-950 text-white p-3 rounded-2xl mt-5 ml-10 min-w-25 ' onClick={goHome}>Go to Home</button>
       </div>
     </>
   );

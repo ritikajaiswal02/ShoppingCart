@@ -1,10 +1,16 @@
-import React from 'react'
-import { NavLink } from 'react-router'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function Card({ item ,onclick,description,children}) {
+function Card({ item, onclick, description, children }) {
+    const navigate = useNavigate();
+
+    const handleTileClick = () => {
+        navigate(`/item/${item.id}`);
+    };
+
     return (
-        <div className='w-[80%] md:w-80 h-[400px] shadow-2xl shadow-gray-400 text-center flex flex-col justify-between relative m-4'>
-            <NavLink to={`item/${item.id}`} className='flex-grow'>
+        <div className='w-[80%] md:w-80 h-[450px] shadow-2xl shadow-gray-400 text-center flex flex-col justify-between relative m-4'>
+            <div className='flex-grow cursor-pointer' onClick={handleTileClick}>
                 <div className='p-2'>
                     <img src={item.image} alt="Something went wrong" className='h-48 object-contain mx-auto' />
                 </div>
@@ -15,7 +21,8 @@ function Card({ item ,onclick,description,children}) {
                         {item.title.length > 100 ? `${item.title.substring(0, 100)}...` : item.title}
                     </p>
                 </div>
-            </NavLink>
+            </div>
+
             {children}
 
             <div className='p-3'>
@@ -28,7 +35,6 @@ function Card({ item ,onclick,description,children}) {
             </div>
         </div>
     );
-
 }
 
-export default Card
+export default Card;

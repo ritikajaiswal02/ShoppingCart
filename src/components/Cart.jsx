@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Card from './Card'
 import { removeitem } from '../redux/slice/AdditemSlice'
 import { nanoid } from '@reduxjs/toolkit';
+import { Outlet } from 'react-router';
 
 
 function Cart() {
@@ -21,17 +22,18 @@ function Cart() {
           detail.length > 0 ? (
             detail.map(item => 
               <Card item={item} onclick={()=>dispatch(removeitem(item.id))} key={nanoid()} description="Remove from Cart" >
-                <p className='font-bold text-blue-600' >Quantity: {item.quantity}</p>
-                </Card>
+              <p className='font-bold text-blue-600' >Quantity: {item.quantity}</p>
+              </Card>
             )
           ) : (
             <div className="mt-[10%] text-xl text-center font-semibold">Add something to cart</div>
           )
         }
       </div>
-      <div className='fixed bottom-0 left-1/2 transform -translate-x-1/2 text-2xl md:text-4xl p-4 w-[90%] md:w-[50%] bg-blue-950 text-white text-center z-50 shadow-lg'>
+      <div className='sticky bottom-0 left-[5%] md:left-[25%] md:mt-[3%] text-2xl md:text-4xl p-4 w-[90%] md:w-[50%] bg-blue-950 text-white text-center z-50 shadow-lg'>
   Total: Rs. {price}
 </div>
+<Outlet/>
       
     </div>
     
