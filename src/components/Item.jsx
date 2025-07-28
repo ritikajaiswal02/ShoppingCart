@@ -26,7 +26,7 @@ function Item() {
   return (
     <>
       <Navbar />
-      <div className="p-4 text-center mt-[25%] md:mt-[10%] w-200 m-auto shadow-2xl">
+      <div className="p-4 text-center mt-[25%] md:mt-[10%] md:w-200 m-auto shadow-2xl">
         <h1 className="text-2xl font-bold">{item.title}</h1>
         <img src={item.image} alt={item.title} className="mx-auto h-64 my-4 object-contain" />
         <p className='font-extrabold text-2xl'>Brand: {item.brand}</p>
