@@ -11,7 +11,6 @@ function Cart() {
 
   const price = detail.reduce((sum,item)=>sum+item.price* item.quantity,0)
 
-  console.log(detail);
   const dispatch = useDispatch()
 
   return (

@@ -5,6 +5,7 @@ import { fetchData } from "../redux/slice/LoadDataSlice"
 import { additem } from '../redux/slice/AdditemSlice'
 import Card from './Card'
 import { nanoid } from '@reduxjs/toolkit'
+import { Outlet } from 'react-router'
 
 function Home() {
   const data = useSelector(state => state.load.data)
@@ -26,6 +27,7 @@ function Home() {
           : <div className='mt-[10%] text-xl text-center font-semibold'>Loading.....</div>
         }
       </div>
+      <Outlet/>
     </>
   )
 }
